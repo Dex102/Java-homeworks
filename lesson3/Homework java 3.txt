@@ -1,0 +1,52 @@
+package lesson_3;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        checkNumber();
+    }
+
+    public static void checkNumber() {
+        int a;
+        Random rnd = new Random();
+        do {
+            int x = rnd.nextInt(10);
+            for (int i = 0; i < 3; i++) {
+                System.out.println("Введите число от 0 до 9");
+                a = sc.nextInt();
+                if (a == x) {
+                    System.out.println("Число = загаданному. Вы выйграли!");
+                    break;
+                } else if (a > x) {
+                    System.out.println("Введеное число > загаданного");
+                } else System.out.println("Введеное число < загаданного");
+            }
+            System.out.println("«Повторить игру еще раз? 1 – да / 0 – нет»(1 – повторить, 0 – нет)");
+        } while (sc.nextInt() == 1);
+    }
+// не получилось
+//    public static void checkFruit() {
+//        String fruits[] = {"apple", "orange", "lemon", "banana", "apricot", "avocado", "broccoli", "carrot", "cherry",
+//                "garlic", "grape", "melon", "leak", "kiwi", "mango", "mushroom", "nut", "olive",
+//                "pea", "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"};
+//        Random rnd = new Random();
+//        int idFruit = rnd.nextInt(fruits.length - 1);
+//        String compFruit = fruits[idFruit];
+//        System.out.println("Отгадай загаданное слово");
+//        System.out.println(compFruit);
+//        do {
+//            System.out.println("Введите ответ");
+//            String fruitAnswer = sc.nextLine();
+//            for (int i = 0; i < fruits.length; i++) {
+//                if (fruitAnswer.charAt(i) == compFruit.charAt(i)) {
+//                    System.out.println("Вы угадали");
+//                    break;
+//                }
+//            }
+//        } while (false);
+//    }
+}
